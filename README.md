@@ -63,6 +63,7 @@ Güvenlik açığı, kullanıcı girdisini HTML kodundan arındıran bleach küt
 # XSS Koruması: Kullanıcı girdisini temizliyoruz
 clean_name = bleach.clean(name)
 clean_comment = bleach.clean(comment)
+
 Referanslar
 OWASP XSS Prevention Cheat Sheet
 CVSS Calculator
