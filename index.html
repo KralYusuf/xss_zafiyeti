@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS Güvenlik Açığı Demosu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        {% if app_version == "fixed" %}
+        <h1>Forum - XSS Güvenlik Açığı Demosu (Düzeltilmiş Versiyon)</h1>
+        <div class="description success">
+            <p><strong>Düzeltilmiş sürümdesiniz!</strong> Bu versiyonda XSS koruması aktiftir.</p>
+            <p>Yorumlar görüntülenmeden önce Bleach kütüphanesi ile temizleniyor.</p>
+        </div>
+        {% else %}
+        <h1>Forum - XSS Güvenlik Açığı Demosu (Açıklı Versiyon)</h1>
+        <div class="description danger">
+            <p><strong>Dikkat: Bu sürüm XSS açığı içerir!</strong></p>
+        </div>
+        {% endif %}
+        
+        <div class="description">
+            <p>Bu uygulama, <strong>Cross-Site Scripting (XSS)</strong> güvenlik açığını göstermek için oluşturulmuştur.</p>
+            <p>Yorum kutusuna aşağıdaki kodu girin:</p>
+            <pre><code>&lt;script&gt;alert('XSS!')&lt;/script&gt;</code></pre>
+            <p>Güvenlik açığı olan uygulamada, script çalışacak ve bir uyarı penceresi görünecektir.</p>
+            <p>Güvenlik açığı düzeltilen uygulamada, kod filtrelenecek ve güvenli şekilde görüntülenecektir.</p>
+        </div>
+
+        <h2>Yeni Yorum Ekle</h2>
+        <form action="/add_comment" method="post" class="comment-form">
+            <div class="form-group">
+                <label for="name">İsim:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="comment">Yorum:</label>
+                <textarea id="comment" name="comment" required></textarea>
+            </div>
+            <button type="submit" class="btn">Yorum Ekle</button>
+        </form>
+
+        <h2>Yorumlar</h2>
+        <div class="comments-section">
+            {% if comments %}
+                {% for comment in comments %}
+                <div class="comment-box">
+                    <h3>{{ comment[1] }}</h3>
+                    <p>{{ comment[2]|safe }}</p>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>Henüz yorum yok.</p>
+            {% endif %}
+        </div>
+
+        <form action="/clear_comments" method="post" class="clear-form">
+            <button type="submit" class="btn danger">Tüm Yorumları Temizle</button>
+        </form>
+        
+        <div class="switch-container">
+            {% if app_version == "fixed" %}
+            <a href="/switch_mode" class="btn danger">Güvenlik Açıklı Versiyona Geç</a>
+            {% else %}
+            <a href="/switch_mode" class="btn success">Düzeltilmiş Versiyona Geç</a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
