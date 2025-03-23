@@ -34,7 +34,7 @@ C:L - Confidentiality: Low (Gizlilik etkisi: Düşük)
 I:L - Integrity: Low (Bütünlük etkisi: Düşük)
 
 A:N - Availability: None (Kullanılabilirlik etkisi: Yok)
-
+-------------------------------------------------------------------------------
 Zafiyet Açıklaması
 Cross-Site Scripting (XSS) güvenlik açığı, bir saldırganın kurban kullanıcının tarayıcısında kötü amaçlı JavaScript kodu çalıştırmasına olanak tanır. Bu demoda, kullanıcı yorumları filtre edilmeden veritabanına kaydedilip görüntülendiğinde, kötü amaçlı komut dosyaları diğer kullanıcıların tarayıcısında çalıştırılabilir.
 
@@ -48,9 +48,9 @@ Sayfada içerik değiştirebilir
 Kullanıcıları sahte sayfalara yönlendirebilir
 Demo Videosu
 Aşağıdaki videoda, güvenlik açığının nasıl istismar edildiği ve düzeltildiği gösterilmektedir:
-
+-------------------------------------------------------------------------------
 Video için buraya tıklayın
-
+-------------------------------------------------------------------------------
 Nasıl Çalıştırılır?
 Gereksinimleri yükleyin:
 
@@ -74,7 +74,11 @@ clean_name = bleach.clean(name)
 clean_comment = bleach.clean(comment)
 
 Referanslar
+
 OWASP XSS Prevention Cheat Sheet
+
 CVSS Calculator
+
 Flask Documentation
+
 Bleach Documentation
