@@ -14,18 +14,27 @@ Bu güvenlik açığı, OWASP Top 10 (2021) listesinde yer alan A03:2021 - Injec
 CVSS Skoru ve Vektör Stringi
 CVSS Skoru: 6.1 (Orta)
 
+OWASP Kategorisi: injection -> Stored xss
 Vektör Stringi: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
 
 Bileşenlerin açıklaması:
 
 AV:N - Attack Vector: Network (Saldırı vektörü: Ağ)
+
 AC:L - Attack Complexity: Low (Saldırı karmaşıklığı: Düşük)
+
 PR:N - Privileges Required: None (Gereken ayrıcalıklar: Yok)
+
 UI:R - User Interaction: Required (Kullanıcı etkileşimi: Gerekli)
+
 S:C - Scope: Changed (Kapsam: Değiştirilmiş)
+
 C:L - Confidentiality: Low (Gizlilik etkisi: Düşük)
+
 I:L - Integrity: Low (Bütünlük etkisi: Düşük)
+
 A:N - Availability: None (Kullanılabilirlik etkisi: Yok)
+
 Zafiyet Açıklaması
 Cross-Site Scripting (XSS) güvenlik açığı, bir saldırganın kurban kullanıcının tarayıcısında kötü amaçlı JavaScript kodu çalıştırmasına olanak tanır. Bu demoda, kullanıcı yorumları filtre edilmeden veritabanına kaydedilip görüntülendiğinde, kötü amaçlı komut dosyaları diğer kullanıcıların tarayıcısında çalıştırılabilir.
 
