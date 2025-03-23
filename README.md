@@ -47,9 +47,15 @@ Kullanıcıların hesaplarını ele geçirebilir
 Sayfada içerik değiştirebilir
 Kullanıcıları sahte sayfalara yönlendirebilir
 Demo Videosu
-Aşağıdaki videoda, güvenlik açığının nasıl istismar edildiği ve düzeltildiği gösterilmektedir:
+Aşağıdaki videoda, güvenlik açığının nasıl istismar edildiği gösterilmektedir:
 -------------------------------------------------------------------------------
-Video için buraya tıklayın
+
+
+
+https://github.com/user-attachments/assets/8d93fa58-4172-42f5-94b6-b901d3f74c52
+
+
+
 -------------------------------------------------------------------------------
 Nasıl Çalıştırılır?
 Gereksinimleri yükleyin:
